@@ -12,9 +12,7 @@ export default {
         }
     }
 };
-
 </script>
-
 <template>
     <nav>
         <img :src="getImagePath(imageName)" alt="">
@@ -23,7 +21,6 @@ export default {
         </ul>
     </nav>
 </template>
-
 <style scoped lang="scss">
 @use "../styles/partials/mixins";
 @use "../styles/partials/variables";
@@ -61,5 +58,4 @@ nav {
 
 img {
     height: 80px;
-}
-</style>
+}</style>

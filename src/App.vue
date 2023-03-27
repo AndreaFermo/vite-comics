@@ -17,19 +17,32 @@ import TheFooter from './components/TheFooter.vue'
     </div>
   </main>
   <footer>
-    <div class="container">
+    <div>
       <TheFooter>
       </TheFooter>
     </div>
 
   </footer>
 </template>
-
 <style lang="scss">
 @use "./styles/general.scss";
+@use "./styles/partials/mixins";
 
 header {
   height: 100px;
 }
-</style>
+
+main {
+  height: 300px;
+}
+
+footer {
+  background-image: url(../src/assets/footer-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  @include mixins.container;
+}</style>
 

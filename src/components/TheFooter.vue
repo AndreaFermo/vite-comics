@@ -35,20 +35,24 @@ export default {
 </script>
 
 <template>
-    <div class="cards">
-        <div v-for="section in sections" class="card">
-            <h2 class="card-title">{{ section.name }}</h2>
-            <ul>
-                <li v-for="content in section.contents">
-                    <a href="#">{{ content }}</a>
-                </li>
-            </ul>
+    <div class="footer-top">
+        <div class="image-wrapper"></div>
+        <div class="cards">
+            <div v-for="section in sections" class="card">
+                <h3 class="card-title">{{ section.name }}</h3>
+                <ul>
+                    <li v-for="content in section.contents">
+                        <a href="#">{{ content }}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div>
-        <div>
-            <div>SIGN-UP NOW!</div>
-            <div>
+
+    <div class="footer-bottom">
+        <div class="footer-wrapper">
+            <div class="sign-up-button">SIGN-UP NOW!</div>
+            <div class="socials">
                 <a href="#">FOLLOW US</a>
                 <ul>
                     <li v-for="image in imagesName"><img :src="getImagePath(image)" alt=""></li>
@@ -57,4 +61,98 @@ export default {
         </div>
     </div>
 </template>
-<style scoped></style>
+<style scoped lang="scss">
+@use "../styles/partials/mixins";
+@use "../styles/partials/variables";
+
+.cards {
+    padding: 15px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 380px;
+    width: 450px;
+
+    .card {
+        width: 150px;
+    }
+
+    h3 {
+        color: variables.$color-white;
+        margin: 15px 0px 20px;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            padding: 3px 0px;
+
+            a {
+                text-decoration: none;
+                color: variables.$color-grey;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.footer-top {
+    @include mixins.container;
+    height: 380px;
+    position: relative;
+
+    .image-wrapper {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 380px;
+        width: 600px;
+        background-image: url(../assets/dc-logo-bg.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+}
+
+.footer-bottom {
+    background-color: #303030;
+
+    .footer-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mixins.container;
+        height: 100px;
+
+        .sign-up-button {
+            color: variables.$color-white;
+            border: 3px solid variables.$color-secondary;
+            padding: 12px;
+
+        }
+
+        .socials {
+            display: flex;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: bold;
+                color: variables.$color-secondary;
+            }
+
+            ul {
+                display: flex;
+                list-style: none;
+                margin-left: 30px;
+
+                li {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+}</style>
