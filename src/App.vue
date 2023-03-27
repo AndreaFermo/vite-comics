@@ -27,5 +27,9 @@ import TheFooter from './components/TheFooter.vue'
 
 <style lang="scss">
 @use "./styles/general.scss";
+
+header {
+  height: 100px;
+}
 </style>
 
