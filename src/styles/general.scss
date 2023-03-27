@@ -1,0 +1,19 @@
+@use "./partials/mixins";
+@use "./partials/variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    color: white;
+    background-color: black;
+
+}
+
+.container {
+    width: 1100px;
+    margin: auto;
+}

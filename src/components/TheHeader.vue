@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <nav class="container">
+    <nav>
         <img :src="getImagePath(imageName)" alt="">
         <ul class="nav-bar">
             <li v-for="section in sections"><a href="#">{{ section }}</a></li>
@@ -24,13 +24,11 @@ export default {
     </nav>
 </template>
 
-<style scoped>
-.container {
-    width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+<style scoped lang="scss">
+@use "../styles/partials/mixins";
+
+nav {
+    @include mixins.d-flex-center;
 }
 
 .nav-bar {
