@@ -22,8 +22,14 @@ export default {
                     name: 'SITES',
                     contents: ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa'],
                 },
-            ]
+            ],
+            imagesName: ['facebook', 'twitter', 'youtube', 'pinterest', 'periscope']
         };
+    },
+    methods: {
+        getImagePath: function (img) {
+            return new URL(`../assets/footer-${img}.png`, import.meta.url).href;
+        }
     }
 };
 </script>
@@ -37,6 +43,17 @@ export default {
                     <a href="#">{{ content }}</a>
                 </li>
             </ul>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div>SIGN-UP NOW!</div>
+            <div>
+                <a href="#">FOLLOW US</a>
+                <ul>
+                    <li v-for="image in imagesName"><img :src="getImagePath(image)" alt=""></li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
