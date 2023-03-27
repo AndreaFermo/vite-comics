@@ -5,28 +5,27 @@ import TheFooter from './components/TheFooter.vue'
 
 <template>
   <header>
-    <TheHeader>
-    </TheHeader>
+    <div class="container">
+      <TheHeader>
+      </TheHeader>
+    </div>
+
   </header>
   <main>
-    <h1 class="main-content">Content goes here</h1>
+    <div class="container">
+      <h1>Content goes here</h1>
+    </div>
   </main>
   <footer>
-    <TheFooter>
-    </TheFooter>
+    <div class="container">
+      <TheFooter>
+      </TheFooter>
+    </div>
+
   </footer>
 </template>
 
-<style>
-main {
-  color: white;
-  background-color: black;
-
-}
-
-.main-content {
-  width: 1100px;
-  margin: auto;
-  line-height: 120px;
-}
+<style lang="scss">
+@use "./styles/general.scss";
 </style>
+
