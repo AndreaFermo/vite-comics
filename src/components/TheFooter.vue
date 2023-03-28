@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: 'TheFooter',
     data() {
         return {
             sections: [
@@ -38,10 +39,10 @@ export default {
     <div class="footer-top">
         <div class="image-wrapper"></div>
         <div class="cards">
-            <div v-for="section in sections" class="card">
+            <div v-for="(section, index) in sections" class="card" :key="index">
                 <h3 class="card-title">{{ section.name }}</h3>
                 <ul>
-                    <li v-for="content in section.contents">
+                    <li v-for="(content, index) in section.contents" :key="index">
                         <a href="#">{{ content }}</a>
                     </li>
                 </ul>
@@ -155,4 +156,5 @@ export default {
         }
     }
 
-}</style>
+}
+</style>

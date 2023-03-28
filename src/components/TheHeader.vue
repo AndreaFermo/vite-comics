@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: 'TheHeader',
     data() {
         return {
             imageName: 'dc-logo.png',
@@ -17,7 +18,7 @@ export default {
     <nav>
         <img :src="getImagePath(imageName)" alt="">
         <ul class="nav-bar">
-            <li v-for="section in sections"><a href="#">{{ section }}</a></li>
+            <li v-for="(section, index) in sections" :key="index"><a href="#">{{ section }}</a></li>
         </ul>
     </nav>
 </template>
@@ -58,4 +59,5 @@ nav {
 
 img {
     height: 80px;
-}</style>
+}
+</style>
