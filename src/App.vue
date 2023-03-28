@@ -4,6 +4,7 @@ import TheFooter from './components/TheFooter.vue';
 import TheJumbotron from './components/TheJumbotron.vue';
 import TheMain from './components/ProductsList.vue';
 import ProductsList from './components/ProductsList.vue';
+import TheBonus from './components/TheBonus.vue';
 
 export default {
   components: {
@@ -11,7 +12,8 @@ export default {
     TheFooter,
     TheJumbotron,
     TheMain,
-    ProductsList
+    ProductsList,
+    TheBonus
   },
   data() {
     return {
@@ -108,6 +110,7 @@ export default {
     <div class="container">
       <ProductsList :comicsList="comics"></ProductsList>
     </div>
+    <TheBonus></TheBonus>
   </main>
   <footer>
     <div>

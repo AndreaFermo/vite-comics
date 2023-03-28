@@ -56,7 +56,7 @@ export default {
             <div class="socials">
                 <a href="#">FOLLOW US</a>
                 <ul>
-                    <li v-for="image in imagesName"><img :src="getImagePath(image)" alt=""></li>
+                    <li v-for="(image, index) in imagesName"><img :src="getImagePath(image)" alt="" :key="index"></li>
                 </ul>
             </div>
         </div>
